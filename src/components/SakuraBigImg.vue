@@ -33,7 +33,9 @@ export default {
     mounted() {
           this.imgLoad();
             window.addEventListener('resize',() => {
+              if (this.$refs.bannerHeight && this.$refs.bannerHeight.length > 0) {
                 this.bannerHeight=this.$refs.bannerHeight[0].height;
+              }
                 this.imgLoad();
             },false)
         },
@@ -41,8 +43,12 @@ export default {
     methods: {
           imgLoad(){
             this.$nextTick(()=>{
-              this.bannerHeight=this.$refs.bannerHeight[0].height;
-                console.log(this.$refs.bannerHeight[0].height);
+              if (this.$refs.bannerHeight && this.$refs.bannerHeight.length > 0) {
+                this.bannerHeight=this.$refs.bannerHeight[0].height;
+                // console.log(this.$refs.bannerHeight[0].height);
+              } else {
+                this.bannerHeight = 300; // 默认给个高度防止渲染崩溃
+              }
             })
           },
           }
