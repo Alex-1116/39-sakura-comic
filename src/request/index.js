@@ -7,7 +7,7 @@ const token = localGet('token')
 const service = axios.create({
 	// baseURL: 'http://127.0.0.1:5000', // 所有的请求地址前缀部分
 	baseURL: 'http://139.196.138.236:5000',
-	timeout: 60000, // 请求超时时间毫秒
+	timeout: 10000, // 降低超时时间，避免卡死
 	withCredentials: true, // 异步请求携带cookie
 	headers: {
 		// 设置后端需要的传参类型
@@ -45,8 +45,9 @@ service.interceptors.response.use(
 	function (error) {
 		// 超出 2xx 范围的状态码都会触发该函数。
 		// 对响应错误做点什么
-		console.log(error)
-		return Promise.reject(error)
+		console.log("Response Error: ", error)
+		// 返回一个空的标准化结构，防止前端调用处解构 res.data.xxx 报错
+		return Promise.resolve({ data: [] })
 	}
 )
 
