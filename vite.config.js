@@ -7,7 +7,7 @@ export default defineConfig({
   base: './',
   resolve: {
     alias: {
-      'vue3-video-play': 'vue3-video-play/dist/index.mjs'
+      'vue3-video-play': 'vue3-video-play/dist/index.es.js'
     }
   }
 })
