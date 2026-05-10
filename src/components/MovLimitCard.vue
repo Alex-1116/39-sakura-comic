@@ -97,7 +97,7 @@ export default {
 
           apiGetMovList(param).then(
             (res) => { 
-              if (res.data.length > 0) {
+              if (res && res.data && res.data.length > 0) {
                   for (var i in res.data) {
                     this.movieList.push(res.data[i])
                  }

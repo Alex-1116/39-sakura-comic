@@ -149,13 +149,13 @@ export default {
           apiGetMovList(param).then(
             (res) => { 
               // console.log(res)
-              if (res.data.length > 0) {
+              if (res && res.data && res.data.length > 0) {
                 this.contentShow = true
                 this.infiniteMsgShow = true
                   for (var i in res.data) {
                     this.movieList.push(res.data[i])
                  }
-                  this.disabled = false // 还有多余数据时 无限滚动打开
+                 this.disabled = false // 还有多余数据时 无限滚动打开
               } else {
                 this.contentShow = false
                 this.infiniteMsgShow = false
@@ -167,7 +167,6 @@ export default {
             () => {
                 this.contentShow = false
                 this.infiniteMsgShow = false
-                this.disabled = true
             }
           )
       },

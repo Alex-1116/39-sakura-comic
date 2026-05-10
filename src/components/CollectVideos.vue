@@ -100,7 +100,7 @@ export default {
           showCollectVideo(param).then(
             (res) => { 
               // console.log(res)
-              if (res.data.data.length > 0) {
+              if (res && res.data && res.data.data && res.data.data.length > 0) {
                 this.contentShow = true
                 this.infiniteMsgShow = true
                   for (var i in res.data.data) {
