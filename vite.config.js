@@ -6,6 +6,10 @@ import { resolve } from 'path'
 export default defineConfig({
   plugins: [vue()],
   base: './',
+  server: {
+    port: 5013,
+    host: '0.0.0.0'
+  },
   resolve: {
     alias: [
       { find: /^vue3-video-play$/, replacement: 'vue3-video-play/dist/index.es.js' }
