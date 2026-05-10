@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [vue()],
   base: './',
   resolve: {
-    alias: {
-      'vue3-video-play': 'vue3-video-play/dist/index.es.js'
-    }
+    alias: [
+      { find: /^vue3-video-play$/, replacement: 'vue3-video-play/dist/index.es.js' }
+    ]
   }
 })
