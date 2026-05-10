@@ -6,7 +6,7 @@ import store from './store/index.js'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
-import vue3videoPlay from 'vue3-video-play/dist/index.es.js' // 引入组件
+import vue3videoPlay from 'vue3-video-play' // 引入组件
 import 'vue3-video-play/dist/style.css' // 引入css
 
 

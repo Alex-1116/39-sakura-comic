@@ -12,7 +12,7 @@
 <script>
 // 视频播放器
 import 'vue3-video-play/dist/style.css'
-import vue3videoPlay from 'vue3-video-play/dist/index.es.js'
+import vue3videoPlay from 'vue3-video-play'
 // import { videoPlay } from 'vue-video-play'
 
 export default {
